@@ -8,3 +8,7 @@ kubectl describe replicasets <replica-set-name> --> details of replicasets
 kubectl create -f <file-name>                   --> creation of things based on file
 kubectl delete replicaset <replicaset-name>     --> replicasets delete
 kubectl scale rs <replicaset-name> --replicas=count 
+kubectl get deployments 
+kubectl get namespaces                          --> get name 
+kubectl get pods --namespace research           --> get pods with namespace 
+
