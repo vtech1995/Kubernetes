@@ -1,0 +1,5 @@
+kubectl get pods -->                             get pods
+kubectl run --image <image> <container_name> --> create pod
+kubectl describe pods <pods-name>                
+kubectl delete pods <pod-name>                   
+kubectl edit pods <pod-name>                 --> edit a running pod config
