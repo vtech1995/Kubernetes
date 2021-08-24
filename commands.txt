@@ -1,5 +1,10 @@
-kubectl get pods -->                             get pods
-kubectl run --image <image> <container_name> --> create pod
+kubectl get pods                                --> get pods
+kubectl run --image <image> <container_name>    --> create pod
 kubectl describe pods <pods-name>                
 kubectl delete pods <pod-name>                   
-kubectl edit pods <pod-name>                 --> edit a running pod config
+kubectl edit pods <pod-name>                    --> edit a running pod config
+kubectl get replicasets                         --> get replicasets
+kubectl describe replicasets <replica-set-name> --> details of replicasets
+kubectl create -f <file-name>                   --> creation of things based on file
+kubectl delete replicaset <replicaset-name>     --> replicasets delete
+kubectl scale rs <replicaset-name> --replicas=count 
