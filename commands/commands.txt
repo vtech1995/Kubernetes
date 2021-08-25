@@ -12,4 +12,30 @@ kubectl get deployments
 kubectl get namespaces                          --> get name 
 kubectl get pods --namespace research           --> get pods with namespace 
 kubectl run redis --image=redis:alpine --dry-run=client -o yaml > redis-pod.yaml   -->to create a file becofre creating a pod
+kubectl expose pod redis --port=6379 --name redis-service  --> create a service and expose a port
+kubectl create deployment webapp --image=kodekloud/webapp-color --replicas=3 --> create a deployment
+kubectl create namespace dev-ns                        --> create namespace
+kubectl create deployment redis-deploy --image=redis  --replicas=2 --namespace=dev-ns  --> creating deployment
+kubectl run httpd --image=httpd:alpine --port=80 --expose   --> service and pod is create in one command 
+kubectl get all  --selector env=prod,bu=finance,tier=frontend   --> using selector 
 
+<================================SCHEDULING======================================>
+
+taint and tolerations===>
+kubectl taint node node01 spray=mortein:NoSchedule --> taint apply 
+kubectl taint nodes controlplane node-role.kubernetes.io/master:NoSchedule- --> untainting a node
+kubectl label nodes node01 color=blue                                       --> labeling a node
+
+<=================Setting node affintiy==================>
+edit the deployment file. 
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: color
+                operator: In
+                values:
+                - blue
+
+<=========Resource limit=========>
