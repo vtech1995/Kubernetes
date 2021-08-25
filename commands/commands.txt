@@ -11,4 +11,5 @@ kubectl scale rs <replicaset-name> --replicas=count
 kubectl get deployments 
 kubectl get namespaces                          --> get name 
 kubectl get pods --namespace research           --> get pods with namespace 
+kubectl run redis --image=redis:alpine --dry-run=client -o yaml > redis-pod.yaml   -->to create a file becofre creating a pod
 
