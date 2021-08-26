@@ -61,6 +61,8 @@ kubectl create configmap webapp-config-map --from-literal=APP_COLOR=darkblue
 config map creation command 
    - configMapRef:
          name: webapp-config-map
-		 
-<==========SECRETS MANAGEMENT===========>
 
+setname space 	 
+kubectl config set-context --current --namespace=<insert-namespace-name-here>
+Running comand for container from kubernetes
+kubectl exec -it app -- cat /log/app.log 
