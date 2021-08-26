@@ -1,0 +1,16 @@
+<===========remove node for maintenance=================>
+
+kubectl drain node01 --ignore-daemonsets
+
+<================make node availablbe after pacthing=========>
+kubectl uncordon node01
+
+only when new pods are created it will be scheduled on this pod.
+
+it will not allow you take down the node for maintenance if you have any pod running on node without replicaset
+as it may result in loss of  pod and it will not be created on other node.
+
+<=============marking node as unschedulable for new pods==============>
+Do not drain node01, instead use the <<<kubectl cordon node01>>> command. 
+This will ensure that no new pods are scheduled on this node .
+The existing pods will not be affected by this operation.
