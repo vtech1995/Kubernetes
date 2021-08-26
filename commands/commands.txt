@@ -39,3 +39,28 @@ edit the deployment file.
                 - blue
 
 <=========Resource limit=========>
+
+<========monitoring ===>
+git clone https://github.com/kodekloudhub/kubernetes-metrics-server.git
+kubectl top node
+kubectl top pods
+
+<========LOGS=======>
+
+kubectl logs <pod-name>
+kubectl logs <pod-name> -c <container-name>
+
+<===deployments===>
+rolling upgrade 
+recreate 
+<====commands and args====>
+endpoint in docker file
+comand and args in pod-def.yaml
+<======ENV VARS======>
+kubectl create configmap webapp-config-map --from-literal=APP_COLOR=darkblue 
+config map creation command 
+   - configMapRef:
+         name: webapp-config-map
+		 
+<==========SECRETS MANAGEMENT===========>
+
