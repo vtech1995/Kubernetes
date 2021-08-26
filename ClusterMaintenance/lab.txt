@@ -14,3 +14,24 @@ as it may result in loss of  pod and it will not be created on other node.
 Do not drain node01, instead use the <<<kubectl cordon node01>>> command. 
 This will ensure that no new pods are scheduled on this node .
 The existing pods will not be affected by this operation.
+
+<==============upgrade plan ==============>
+kubeadm upgrade plan
+then check for stable version 
+we plan to upgrade the master first so, drain the master
+
+On the controlplane node, run the command run the following commands:
+
+apt update
+This will update the package lists from the software repository.
+
+apt install kubeadm=1.20.0-00
+This will install the kubeadm version 1.20
+
+kubeadm upgrade apply v1.20.0
+This will upgrade kubernetes controlplane. Note that this can take a few minutes.
+
+apt install kubelet=1.20.0-00 This will update the kubelet with the version 1.20.
+
+You may need to restart kubelet after it has been upgraded.
+Run: systemctl restart kubelet
