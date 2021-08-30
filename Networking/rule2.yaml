@@ -1,0 +1,18 @@
+piVersion: extensions/v1beta1 
+#this version of apiversion in depricated 
+kind: Ingress
+metadata:
+  name: test-ingress
+  namespace: critical-space
+  annotations:
+    nginx.ingress.kubernetes.io/rewrite-target: /
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  rules:
+    - http:
+        paths:
+          -  path: /pay
+             backend:
+               serviceName: pay-service
+               servicePort: 8282
+
