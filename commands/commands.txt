@@ -65,4 +65,5 @@ config map creation command
 setname space 	 
 kubectl config set-context --current --namespace=<insert-namespace-name-here>
 Running comand for container from kubernetes
-kubectl exec -it app -- cat /log/app.log 
+kubectl exec -it app -- cat /log/app.log  
+kubectl exec -it hr -- nslookup mysql.payroll > /root/CKA/nslookup.out

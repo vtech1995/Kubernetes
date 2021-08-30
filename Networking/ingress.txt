@@ -1,0 +1,28 @@
+Ingress gives a single link to access the application from outside to inside of the cluster.
+layer 7 load baclancer 
+still we need to publish it to outside world either as nodeport or as loadbalancer.
+
+ingress solution ---> ingress controller
+set of ingress rules ---> ingress resources are like deploymnet file based things.
+
+
+nginx based solution
+how igress works in AKS
+
+this needs to be deployed as a deployment.
+
+
+add a config map and environment variable.
+
+
+1. deploymnet
+2. service
+3.config-map 
+4.authenticaion.
+
+
+
+kubectl get all -A 
+#list all resources in kubernetes
+
+ingress controller and ingress resources are different objects and can be different namespaces
