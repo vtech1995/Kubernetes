@@ -1,0 +1,4 @@
+kubectl create namespace ingress-space
+kubectl create configmap nginx-configuration -n ingress-space
+kubectl create serviceaccount ingress-serviceaccount --namespace ingress-space
+create a role and role bindings for serviceaccount.
