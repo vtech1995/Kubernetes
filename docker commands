@@ -1,0 +1,3 @@
+docker inspect {container id} or {object id}
+docker log {container-name}/{container id}
+docker logs -f --until=2s test
