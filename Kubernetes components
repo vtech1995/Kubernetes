@@ -1,0 +1,33 @@
+controller components:- 
+a. kube api-server
+b. etcd
+c. kube-scheduler
+d. kube-controller manager 
+   1. Node controller : Responsible for noticing and responding when nodes go down.
+   2. job contoller   : Watches for Job objects that represent one-off tasks, then creates Pods to run those tasks to completion.
+   3. Endpoint controller : Populates the Endpoints object (that is, joins Services & Pods).
+   4. service account and tocker controller:  Create default accounts and API access tokens for new namespacess
+e. cloud-controller-manager : A Kubernetes control plane component that embeds cloud-specific control logic.
+   1. Node controller: For checking the cloud provider to determine if a node has been deleted in the cloud after it stops responding.
+   2. Route controller: For setting up routes in the underlying cloud infrastructure.
+   3. Service controller: For creating, updating and deleting cloud provider load balancers.
+------------------------
+Node components:- 
+
+ a. kubelet: 
+ b. kubeproxy:kube-proxy is a network proxy that runs on each node in your cluster, implementing part of the Kubernetes Service concept.kube-proxy maintains network rules on nodes. These network rules allow network communication to your Pods from network sessions inside or outside of your cluster.
+kube-proxy uses the operating system packet filtering layer if there is one and it's available. Otherwise, kube-proxy forwards the traffic itself.
+ c.Container runtime: Docker
+ d. Addons:- Addons use Kubernetes resources (DaemonSet, Deployment, etc) to implement cluster features. Because these are providing cluster-level features, namespaced resources for addons belong within the kube-system namespace
+    1. DNS : While the other addons are not strictly required, all Kubernetes clusters should have cluster DNS, as many examples rely on it.
+             Cluster DNS is a DNS server, in addition to the other DNS server(s) in your environment, which serves DNS records for Kubernetes services.
+             Containers started by Kubernetes automatically include this DNS server in their DNS searches.
+             
+    2. Web UI: Dashboard is a general purpose, web-based UI for Kubernetes clusters. It allows users to manage and troubleshoot applications running in the cluster, as well as the cluster itself
+    3. Cluster resource monitoring: records generic time-series metrics about containers in a central database, and provides a UI for browsing that data
+    4. Cluster-level logging: mechanism is responsible for saving container logs to a central log store with search/browsing interface
+    
+
+
+ 
+  
